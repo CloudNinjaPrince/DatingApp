@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+.title_bg{
+    background: linear-gradient(to left bottom, #bc0041, #c10056, #c0006e, #ba0087, #ad00a2, #a700b3, #9c00c5, #8a00d8, #8e00e2, #9300eb, #9700f5, #9b00ff);
+}

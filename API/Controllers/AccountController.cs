@@ -23,7 +23,7 @@ namespace API.Controllers
         [HttpPost("register")]  //POST api/account/register
         public async Task<ActionResult<UserDto>> Register(RegisterDTO registerDto)
         {
-            if (await UserExists(registerDto.Username)) return BadRequest("Username already exist!");
+            if (await UserExists(registerDto.Username)) return BadRequest("Oh Oh userName is already taken!");
 
             using var hmac = new HMACSHA512();
             var user = new AppUser
@@ -59,7 +59,7 @@ namespace API.Controllers
             for (int i = 0; i < ComputeHash.Length; i++)
             {
                 if (ComputeHash[i] != user.PasswordHash[i]) 
-                return Unauthorized("invalid password chiko!");
+                return Unauthorized("Incorrect Password, Try again chiko!");
             }
 
              return new UserDto
