@@ -24,7 +24,7 @@ namespace API.Controllers
         public async Task<ActionResult<UserDto>> Register(RegisterDTO registerDto)
         {
             if (await UserExists(registerDto.Username)) 
-            return BadRequest("ah, Username is already taken!, try with a new one?");
+            return BadRequest("ah, the username is already taken! try with a new one?");
 
             using var hmac = new HMACSHA512();
             var user = new AppUser
@@ -51,7 +51,7 @@ namespace API.Controllers
             x.UserName == loginDto.Username
             );
 
-            if (user == null) return Unauthorized("Username is incorrect!");
+            if (user == null) return Unauthorized("hon, the username is incorrect! try again?");
 
             using var hmac = new HMACSHA512(user.PasswordSalt);
 
