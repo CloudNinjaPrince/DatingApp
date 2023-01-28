@@ -28,7 +28,7 @@ namespace API.Extensions
                                 }
                              );
 
-                             return services;
+            return services;
         }
     }
 }
